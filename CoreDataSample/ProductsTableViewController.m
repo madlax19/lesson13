@@ -12,6 +12,7 @@
 #import "CDProduct.h"
 
 #import "ProductsTableViewController.h"
+#import "ProductTableViewCell.h"
 
 @interface ProductsTableViewController () <UITableViewDelegate>
 
@@ -217,7 +218,7 @@
         label.text = [NSString stringWithFormat:@"Total price : %.2f", summ];
         return label;
     }
-    return nil;
+    return [[UIView alloc] init];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -228,9 +229,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+    ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     CDProduct *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = product.name;
+    cell.productNameLabel.text = product.name;
+    cell.productCountLabel.text = product.count.stringValue;
+    cell.productPriceLabel.text = [NSString stringWithFormat:@"price: %.2f", product.price.floatValue];
+    if (product.count.integerValue > 1) {
+        cell.productPriceLabel.text = [NSString stringWithFormat:@"%@; total price: %.2f", cell.productPriceLabel.text, product.count.floatValue * product.price.floatValue];
+    }
     
     if ([product.complete boolValue]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;

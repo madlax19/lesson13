@@ -57,18 +57,65 @@
         <scene sceneID="cZl-jm-xXd">
             <objects>
                 <tableViewController storyboardIdentifier="ProductsTableViewControllerIdentifier" id="6P8-VM-dAp" customClass="ProductsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="H6Y-nA-Mk5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" id="H6Y-nA-Mk5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="eOq-QS-Yxe">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="67" id="eOq-QS-Yxe" customClass="ProductTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eOq-QS-Yxe" id="qYy-bJ-kpv">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-V1-Krx">
+                                            <rect key="frame" x="10" y="8" width="550" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="UH2-zQ-FnP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sz-p6-V4i">
+                                            <rect key="frame" x="10" y="37" width="40" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="oFa-Uc-Ov0"/>
+                                                <constraint firstAttribute="width" constant="40" id="zkT-nK-Zs6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgA-e3-DG6">
+                                            <rect key="frame" x="58" y="37" width="502" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="n2b-KH-Prw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tgA-e3-DG6" firstAttribute="top" secondItem="rfb-V1-Krx" secondAttribute="bottom" constant="8" id="1so-m5-tlS"/>
+                                        <constraint firstAttribute="bottom" secondItem="tgA-e3-DG6" secondAttribute="bottom" constant="8" id="BCk-O9-Blv"/>
+                                        <constraint firstItem="1Sz-p6-V4i" firstAttribute="top" secondItem="rfb-V1-Krx" secondAttribute="bottom" constant="8" id="CRu-nw-cZ8"/>
+                                        <constraint firstAttribute="trailing" secondItem="rfb-V1-Krx" secondAttribute="trailing" constant="40" id="DXk-47-0mS"/>
+                                        <constraint firstItem="1Sz-p6-V4i" firstAttribute="leading" secondItem="qYy-bJ-kpv" secondAttribute="leading" constant="10" id="EK3-U6-fWT"/>
+                                        <constraint firstItem="rfb-V1-Krx" firstAttribute="leading" secondItem="qYy-bJ-kpv" secondAttribute="leading" constant="10" id="ZxK-LU-S8a"/>
+                                        <constraint firstAttribute="bottom" secondItem="1Sz-p6-V4i" secondAttribute="bottom" constant="8" id="c2r-Gk-9Ao"/>
+                                        <constraint firstItem="rfb-V1-Krx" firstAttribute="top" secondItem="qYy-bJ-kpv" secondAttribute="top" constant="8" id="f8A-z1-QtL"/>
+                                        <constraint firstItem="tgA-e3-DG6" firstAttribute="leading" secondItem="1Sz-p6-V4i" secondAttribute="trailing" constant="8" id="j5E-8e-cLG"/>
+                                        <constraint firstAttribute="trailing" secondItem="tgA-e3-DG6" secondAttribute="trailing" constant="40" id="qrf-o1-Dwq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productCountLabel" destination="1Sz-p6-V4i" id="XCg-Qg-Hef"/>
+                                    <outlet property="productNameLabel" destination="rfb-V1-Krx" id="Vxk-lu-Wt5"/>
+                                    <outlet property="productPriceLabel" destination="tgA-e3-DG6" id="HIv-Jg-9CN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
