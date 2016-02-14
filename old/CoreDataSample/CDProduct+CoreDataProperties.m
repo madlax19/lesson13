@@ -18,6 +18,5 @@
 @dynamic actualPrice;
 @dynamic complete;
 @dynamic basket;
-@dynamic count;
 
 @end
